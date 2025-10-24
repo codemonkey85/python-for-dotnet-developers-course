@@ -1,37 +1,36 @@
 ﻿using System;
 
-namespace Ch3_Lang
+namespace Ch3_Lang;
+
+internal class Closuers
 {
-    class Closuers
+    public delegate void CounterMethod();
+
+    public static void Run()
     {
-        public static void Run()
+        var counter1 = CreateCounter(7, 1);
+        var counter2 = CreateCounter(-100, 2);
+        counter1();
+        counter2();
+
+        counter1();
+        counter2();
+
+        counter1();
+        counter2();
+    }
+
+    public static CounterMethod CreateCounter(int starterVal, int counter_id)
+    {
+        var start = starterVal;
+        Console.WriteLine($"Creating a counter with start value {starterVal}...");
+
+        CounterMethod counter = delegate
         {
-            var counter1 = CreateCounter(7, 1);
-            var counter2 = CreateCounter(-100, 2);
-            counter1();
-            counter2();
+            start++;
+            Console.WriteLine($"#{counter_id}: Counting {starterVal}\t-->\t{start}.");
+        };
 
-            counter1();
-            counter2();
-
-            counter1();
-            counter2();
-        }
-
-        public delegate void CounterMethod();
-
-        public static CounterMethod CreateCounter(int starterVal, int counter_id)
-        {
-            var start = starterVal;
-            Console.WriteLine($"Creating a counter with start value {starterVal}...");
-
-            CounterMethod counter = delegate ()
-            {
-                start++;
-                Console.WriteLine($"#{counter_id}: Counting {starterVal}\t-->\t{start}.");
-            };
-
-            return counter;
-        }
+        return counter;
     }
 }

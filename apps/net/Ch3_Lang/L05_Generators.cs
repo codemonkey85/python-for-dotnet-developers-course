@@ -1,59 +1,59 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Ch3_Lang
+namespace Ch3_Lang;
+
+internal class Generators
 {
-    class Generators
+    public static void Run()
     {
-        public static void Run()
+        Console.WriteLine("Generators");
+
+        foreach (var n in Fibonacci())
         {
-            Console.WriteLine("Generators");
-
-            foreach (int n in Fibonacci())
+            if (n > 1000)
             {
-                if (n > 1000)
-                {
-                    break;
-                }
-
-                Console.Write(n);
-                Console.Write(", ");
-            }
-            Console.WriteLine();
-        }
-
-        public static IEnumerable<int> Fibonacci()
-        {
-            int current = 0;
-            int next = 1;
-
-            while (true)
-            {
-                int temp = current;
-                current = next;
-                next = temp + next;
-
-                yield return current;
-            }
-            // ReSharper disable once IteratorNeverReturns
-        }
-       
-        public static IEnumerable<int> Fibonacci(int count)
-        {
-            List<int> nums = new List<int>();
-            int current = 0;
-            int next = 1;
-
-            for (int i = 0; i < count; i++)
-            {
-                int temp = current;
-                current = next;
-                next = temp + next;
-
-                nums.Add(current);
+                break;
             }
 
-            return nums;
+            Console.Write(n);
+            Console.Write(", ");
         }
+
+        Console.WriteLine();
+    }
+
+    public static IEnumerable<int> Fibonacci()
+    {
+        var current = 0;
+        var next = 1;
+
+        while (true)
+        {
+            var temp = current;
+            current = next;
+            next = temp + next;
+
+            yield return current;
+        }
+        // ReSharper disable once IteratorNeverReturns
+    }
+
+    public static IEnumerable<int> Fibonacci(int count)
+    {
+        var nums = new List<int>();
+        var current = 0;
+        var next = 1;
+
+        for (var i = 0; i < count; i++)
+        {
+            var temp = current;
+            current = next;
+            next = temp + next;
+
+            nums.Add(current);
+        }
+
+        return nums;
     }
 }

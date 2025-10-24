@@ -1,18 +1,17 @@
-﻿namespace Ch6_Web.Data
-{
-    public class Guitar
-    {
-        public string Name { get; }
-        public float Price { get; }
-        public string Img { get; }
-        public string Style { get; }
+﻿namespace Ch6_Web.Data;
 
-        public Guitar(string name, float price, string img, string style)
-        {
-            Name = name;
-            Price = price;
-            Img = img;
-            Style = style;
-        }
+public class Guitar
+{
+    public Guitar(string name, float price, string img, string style)
+    {
+        Name = name;
+        Price = price;
+        Img = img;
+        Style = style;
     }
+
+    public string Name { get; }
+    public float Price { get; }
+    public string Img { get; }
+    public string Style { get; }
 }
