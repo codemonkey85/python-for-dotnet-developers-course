@@ -32,7 +32,7 @@ public class ParkingLot : IEnumerable<string>
     public static ParkingLot Create(int spotsPerLevel, int levels)
     {
         var names = new List<string>();
-        string[] level_names = { "A", "B", "C", "D", "E", "F", "G" };
+        string[] level_names = ["A", "B", "C", "D", "E", "F", "G"];
         foreach (var ln in level_names.Take(levels))
         {
             for (var n = 0; n < spotsPerLevel; n++)

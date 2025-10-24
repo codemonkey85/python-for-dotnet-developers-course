@@ -21,10 +21,9 @@ public static class DataLoader
 
             Debug.WriteLine("No data found. Loading new guitars...");
 
-            var guitars =
-                new[]
-                {
-                    new Guitar("AX Black", 499, "/img/guitars/ax-black.jpg", "electric"),
+            Guitar[] guitars =
+            [
+                new Guitar("AX Black", 499, "/img/guitars/ax-black.jpg", "electric"),
                     new Guitar("Jet Black Electric", 599, "/img/guitars/jet-black-electric.jpg", "electric"),
                     new Guitar("Weezer Classic", 1499, "/img/guitars/weezer-classic.jpg", "electric"),
                     new Guitar("Acoustic Black", 1299, "/img/guitars/black-acoustic.jpg", "acoustic"),
@@ -33,7 +32,7 @@ public static class DataLoader
                     new Guitar("Brush Riffs", 599, "/img/guitars/brushed-black-electric.jpg", "electric"),
                     new Guitar("Nature''s Song", 799, "/img/guitars/natures-song.jpg", "electric"),
                     new Guitar("Electric Wood Grain", 399, "/img/guitars/woodgrain-electric.jpg", "electric")
-                };
+            ];
 
             foreach (var g in guitars)
             {

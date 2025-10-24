@@ -9,9 +9,11 @@ internal class Using
 {
     public static void Run()
     {
-        var data = new Dictionary<string, string>();
-        data.Add("Name", "Michael");
-        data.Add("Language", "C#");
+        var data = new Dictionary<string, string>
+        {
+            { "Name", "Michael" },
+            { "Language", "C#" }
+        };
 
         using (var file = File.CreateText(@"file.json"))
         {

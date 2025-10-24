@@ -23,15 +23,14 @@ public static class TestData
 
     private static Guitar[] TestGuitarData()
     {
-        var guitars =
-            new[]
-            {
-                new Guitar("Jet Black Electric", 599, "/img/guitars/jet-black-electric.jpg", "electric"),
+        Guitar[] guitars =
+        [
+            new Guitar("Jet Black Electric", 599, "/img/guitars/jet-black-electric.jpg", "electric"),
                 new Guitar("Weezer Classic", 1499, "/img/guitars/weezer-classic.jpg", "electric"),
                 new Guitar("Acoustic Black", 299, "/img/guitars/black-acoustic.jpg", "acoustic"),
                 new Guitar("Brush Riffs", 599, "/img/guitars/brushed-black-electric.jpg", "electric"),
                 new Guitar("Electric Wood Grain", 399, "/img/guitars/woodgrain-electric.jpg", "electric")
-            };
+        ];
 
         return guitars;
     }

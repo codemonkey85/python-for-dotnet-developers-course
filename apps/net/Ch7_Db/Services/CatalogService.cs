@@ -9,7 +9,7 @@ public static class CatalogService
     {
         using (var db = new AppDbContext())
         {
-            if (style == null || style == "all")
+            if (style is null or "all")
             {
                 return db.Guitars.OrderByDescending(g => g.Price).ToArray();
             }

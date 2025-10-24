@@ -53,13 +53,14 @@ internal class FunctionBasics
             return null;
         }
 
-        if (val < 1 || 100 < val)
+        switch (val)
         {
-            Console.WriteLine($"{val} is not between 1 & 100.");
-            return null;
+            case < 1 or > 100:
+                Console.WriteLine($"{val} is not between 1 & 100.");
+                return null;
+            default:
+                return val;
         }
-
-        return val;
     }
 
 

@@ -15,7 +15,7 @@ internal class Errors
             values.Add(i + 1);
         }
 
-        values.AddRange(new[] { 0, 1, 1, 2, 3, 5, 8 });
+        values.AddRange([0, 1, 1, 2, 3, 5, 8]);
 
         foreach (var v in values)
         {
@@ -47,7 +47,7 @@ internal class Errors
     }
 
 
-    public static void SketchyMethod(int value)
+    private static void SketchyMethod(int value)
     {
         var r = new Random();
 

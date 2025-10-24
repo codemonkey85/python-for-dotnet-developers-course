@@ -59,7 +59,7 @@ internal class MainClass
         var client = new HttpClient();
 
         var response = await client.GetAsync(url);
-        if (response.StatusCode == HttpStatusCode.Moved || response.StatusCode == HttpStatusCode.MovedPermanently)
+        if (response.StatusCode is HttpStatusCode.Moved or HttpStatusCode.MovedPermanently)
         {
             url = response.Headers.Location.ToString();
             return await GetEpisodeHtml(episodeNumber, url);

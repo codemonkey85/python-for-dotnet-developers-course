@@ -21,7 +21,7 @@ internal class Iteration
         }
 
         // foreach
-        int[] nums = { 1, 5, 8, 10, 7, 2 };
+        int[] nums = [1, 5, 8, 10, 7, 2];
         foreach (var n in nums)
         {
             Console.WriteLine($"The next number is {n}.");

@@ -9,7 +9,7 @@ internal class Lambdas
 {
     public static void Run()
     {
-        var data = new List<int> { 55, 987, 89, -233, 8, 13, -377, 3, 1, -34, 610, 144, 5, 21, 2, 1 };
+        List<int> data = [55, 987, 89, -233, 8, 13, -377, 3, 1, -34, 610, 144, 5, 21, 2, 1];
         data.Sort((n, m) => Math.Abs(n) - Math.Abs(m));
         Console.WriteLine(PrintCollection(data));
 
@@ -25,7 +25,7 @@ internal class Lambdas
             sb.Append(", ");
         }
 
-        sb.Append("]");
+        sb.Append(']');
 
         return sb.ToString().Replace(", ]", "]");
     }

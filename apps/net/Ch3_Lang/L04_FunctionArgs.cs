@@ -32,17 +32,17 @@ internal class FunctionArgs
         Console.WriteLine();
     }
 
-    public static void SayHello(string name, int times = 1, params object[] extras)
+    private static void SayHello(string name, int times = 1, params object[] extras)
     {
         Console.WriteLine($"Hello there {name}, times={times}, extras={PrintArray(extras)}!");
     }
 
-    public static void SayHello()
+    private static void SayHello()
     {
         SayHello("friend");
     }
 
-    public static void SayHello(int times)
+    private static void SayHello(int times)
     {
         for (var i = 0; i < times; i++)
         {
@@ -50,7 +50,7 @@ internal class FunctionArgs
         }
     }
 
-    public static void SayHello(double times)
+    private static void SayHello(double times)
     {
         for (var i = 0; i < times; i++)
         {
@@ -63,12 +63,12 @@ internal class FunctionArgs
         var sb = new StringBuilder("[");
         foreach (var o in ar)
         {
-            sb.Append("\"");
+            sb.Append('"');
             sb.Append(o);
             sb.Append("\", ");
         }
 
-        sb.Append("]");
+        sb.Append(']');
 
         return sb.ToString();
     }

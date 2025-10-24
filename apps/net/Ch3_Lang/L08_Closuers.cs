@@ -4,7 +4,7 @@ namespace Ch3_Lang;
 
 internal class Closuers
 {
-    public delegate void CounterMethod();
+    private delegate void CounterMethod();
 
     public static void Run()
     {
@@ -20,7 +20,7 @@ internal class Closuers
         counter2();
     }
 
-    public static CounterMethod CreateCounter(int starterVal, int counter_id)
+    private static CounterMethod CreateCounter(int starterVal, int counter_id)
     {
         var start = starterVal;
         Console.WriteLine($"Creating a counter with start value {starterVal}...");

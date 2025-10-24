@@ -9,8 +9,10 @@ internal class Wizard
 
     public static Wizard Train(int baseLevel)
     {
-        var w = new Wizard();
-        w.Level = baseLevel;
+        var w = new Wizard
+        {
+            Level = baseLevel
+        };
 
         return w;
     }

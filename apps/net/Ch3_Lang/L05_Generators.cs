@@ -23,7 +23,7 @@ internal class Generators
         Console.WriteLine();
     }
 
-    public static IEnumerable<int> Fibonacci()
+    private static IEnumerable<int> Fibonacci()
     {
         var current = 0;
         var next = 1;

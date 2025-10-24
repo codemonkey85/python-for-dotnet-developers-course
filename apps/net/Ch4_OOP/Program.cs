@@ -39,14 +39,11 @@ internal class Program
         Console.WriteLine();
     }
 
-    private static Car[] CreateCars()
-    {
-        return new Car[]
-        {
-            new SportsCar("Corvette", "gas", 8, 50_000),
-            new BasicCar("Windstar", "gas", 6, 20_000),
-            new ElectricCar("Tesla", 60_000),
-            new ElectricCar("Bolt", 40_000)
-        };
-    }
+    private static Car[] CreateCars() =>
+    [
+        new SportsCar("Corvette", "gas", 8, 50_000),
+        new BasicCar("Windstar", "gas", 6, 20_000),
+        new ElectricCar("Tesla", 60_000),
+        new ElectricCar("Bolt", 40_000)
+    ];
 }
