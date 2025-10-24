@@ -2,13 +2,9 @@
 
 namespace Ch4_OOP.Models;
 
-public class SportsCar : Car
+public class SportsCar(string modeName, string engineType, int cylinders, float basePrice)
+    : Car(modeName, engineType, cylinders, basePrice)
 {
-    public SportsCar(string modeName, string engineType, int cylinders, float basePrice) :
-        base(modeName, engineType, cylinders, basePrice)
-    {
-    }
-
     public override void Refuel()
     {
         Console.WriteLine($"SportsCar: The {ModelName} only wants the best gas.");

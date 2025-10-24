@@ -24,7 +24,7 @@ public class LibTests
     [TestMethod]
     public void TestElectricGuitars()
     {
-        var style = "electric";
+        const string style = "electric";
 
         var db = new Lib(TestData.GetMockDb(), TestData.GetMockLogger());
         var guitars = db.AllGuitars(style);

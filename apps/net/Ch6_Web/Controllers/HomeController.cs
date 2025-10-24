@@ -15,8 +15,7 @@ public class HomeController : Controller
 
     public IActionResult Guitars(string id)
     {
-        var style = id;
-        var vm = new GuitarsViewModel(style);
+        var vm = new GuitarsViewModel(id);
         return View(vm);
     }
 

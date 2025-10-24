@@ -8,18 +8,12 @@ public class ParkingLot : IEnumerable<string>
 {
     private readonly Dictionary<string, Car> spots;
 
-    public ParkingLot(IEnumerable<string> names)
+    private ParkingLot(IEnumerable<string> names)
     {
-        spots = names.ToDictionary(n => n, name => (Car)null);
+        spots = names.ToDictionary(n => n, Car (name) => null);
     }
 
-    public IEnumerator<string> GetEnumerator()
-    {
-        foreach (var spot in spots.Keys)
-        {
-            yield return spot;
-        }
-    }
+    public IEnumerator<string> GetEnumerator() => ((IEnumerable<string>)spots.Keys).GetEnumerator();
 
     IEnumerator IEnumerable.GetEnumerator()
     {
@@ -53,13 +47,10 @@ public class ParkingLot : IEnumerable<string>
 
     public void ParkCar(Car car)
     {
-        foreach (var kv in spots)
+        foreach (var kv in spots.Where(kv => kv.Value == null))
         {
-            if (kv.Value == null)
-            {
-                spots[kv.Key] = car;
-                break;
-            }
+            spots[kv.Key] = car;
+            break;
         }
     }
 }

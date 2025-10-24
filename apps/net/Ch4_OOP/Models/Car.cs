@@ -2,20 +2,12 @@
 
 namespace Ch4_OOP.Models;
 
-public abstract class Car
+public abstract class Car(string modelName, string engineType, int cylinders, float basePrice)
 {
-    public Car(string modelName, string engineType, int cylinders, float basePrice)
-    {
-        ModelName = modelName;
-        EngineType = engineType;
-        Cylinders = cylinders;
-        BasePrice = basePrice;
-    }
-
-    public string ModelName { get; }
-    public string EngineType { get; }
-    public int Cylinders { get; }
-    public float BasePrice { get; }
+    public string ModelName { get; } = modelName;
+    private string EngineType { get; } = engineType;
+    public int Cylinders { get; } = cylinders;
+    public float BasePrice { get; } = basePrice;
 
     public bool IsElectric => EngineType == "electric";
 

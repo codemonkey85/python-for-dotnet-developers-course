@@ -19,7 +19,7 @@ internal class MainClass
         Console.WriteLine($"Done in {sw.ElapsedMilliseconds / 1000.0} sec.");
     }
 
-    public static void GetTitleRange()
+    private static void GetTitleRange()
     {
         // Please keep this range pretty small to not DDoS my site. ;)
         for (var i = 220; i < 231; i++)
@@ -34,38 +34,41 @@ internal class MainClass
         Console.ForegroundColor = ConsoleColor.White;
     }
 
-    public static string GetEpisodeHtml(int episodeNumber, string url = null)
+    private static string GetEpisodeHtml(int episodeNumber, string url = null)
     {
-        if (string.IsNullOrEmpty(url))
+        while (true)
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine($"Getting HTML for episode {episodeNumber}");
+            if (string.IsNullOrEmpty(url))
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine($"Getting HTML for episode {episodeNumber}");
+            }
+
+            if (url == null)
+            {
+                url = $"https://talkpython.fm/{episodeNumber}";
+            }
+
+            var client = new HttpClient();
+
+            var response = client.GetAsync(url).Result;
+            if (response.StatusCode is HttpStatusCode.Moved or HttpStatusCode.MovedPermanently)
+            {
+                url = response.Headers.Location?.ToString();
+                continue;
+            }
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception($"Invalid request, got code {response.StatusCode}");
+            }
+
+            var html = response.Content.ReadAsStringAsync().Result;
+            return html;
         }
-
-        if (url == null)
-        {
-            url = $"https://talkpython.fm/{episodeNumber}";
-        }
-
-        var client = new HttpClient();
-
-        var response = client.GetAsync(url).Result;
-        if (response.StatusCode is HttpStatusCode.Moved or HttpStatusCode.MovedPermanently)
-        {
-            url = response.Headers.Location.ToString();
-            return GetEpisodeHtml(episodeNumber, url);
-        }
-
-        if (!response.IsSuccessStatusCode)
-        {
-            throw new Exception($"Invalid request, got code {response.StatusCode}");
-        }
-
-        var html = response.Content.ReadAsStringAsync().Result;
-        return html;
     }
 
-    public static string GetTitle(string html)
+    private static string GetTitle(string html)
     {
         var page = new HtmlDocument();
         page.LoadHtml(html);

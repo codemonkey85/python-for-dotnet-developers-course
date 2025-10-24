@@ -3,14 +3,8 @@ using Ch6_Web.Services;
 
 namespace Ch6_Web.Models;
 
-public class GuitarsViewModel
+public class GuitarsViewModel(string style)
 {
-    public GuitarsViewModel(string style)
-    {
-        Style = style;
-        Guitars = CatalogService.AllGuitars(style);
-    }
-
-    public string Style { get; }
-    public Guitar[] Guitars { get; }
+    public string Style { get; } = style;
+    public Guitar[] Guitars { get; } = CatalogService.AllGuitars(style);
 }

@@ -3,14 +3,8 @@ using Ch7_Db.Services;
 
 namespace Ch7_Db.Models;
 
-public class GuitarsViewModel
+public class GuitarsViewModel(string style)
 {
-    public GuitarsViewModel(string style)
-    {
-        Style = style;
-        Guitars = CatalogService.AllGuitars(style);
-    }
-
-    public string Style { get; }
-    public Guitar[] Guitars { get; }
+    public string Style { get; } = style;
+    public Guitar[] Guitars { get; } = CatalogService.AllGuitars(style);
 }

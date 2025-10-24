@@ -4,8 +4,6 @@ namespace Ch3_Lang;
 
 internal class Closuers
 {
-    private delegate void CounterMethod();
-
     public static void Run()
     {
         var counter1 = CreateCounter(7, 1);
@@ -33,4 +31,6 @@ internal class Closuers
 
         return counter;
     }
+
+    private delegate void CounterMethod();
 }
