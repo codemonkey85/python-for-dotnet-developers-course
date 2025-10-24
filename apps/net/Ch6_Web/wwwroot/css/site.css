@@ -52,11 +52,11 @@ h1, h2 {
     text-align: center;
 }
 
-    .guitar img {
-        max-width: 300px;
-        max-height: 300px;
-        border-radius: 8px;
-    }
+.guitar img {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 8px;
+}
 
 .guitar-name {
     font-weight: bold;
