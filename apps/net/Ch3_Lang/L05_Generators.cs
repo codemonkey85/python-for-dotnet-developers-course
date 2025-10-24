@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Ch3_Lang;
+﻿namespace Ch3_Lang;
 
 internal class Generators
 {

@@ -1,5 +1,4 @@
-﻿using System;
-using Ch8_Testing;
+﻿using Ch8_Testing;
 
 namespace Ch8_Testing_App;
 

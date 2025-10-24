@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-
-namespace Ch8_Testing;
+﻿namespace Ch8_Testing;
 
 public class Lib
 {

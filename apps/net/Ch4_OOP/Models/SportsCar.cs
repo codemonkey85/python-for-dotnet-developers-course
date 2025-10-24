@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ch4_OOP.Models;
+﻿namespace Ch4_OOP.Models;
 
 public class SportsCar(string modeName, string engineType, int cylinders, float basePrice)
     : Car(modeName, engineType, cylinders, basePrice)

@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics;
 using Ch6_Web.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace Ch6_Web.Controllers;
 

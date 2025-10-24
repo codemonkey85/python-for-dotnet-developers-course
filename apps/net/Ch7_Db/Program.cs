@@ -1,6 +1,4 @@
 using Ch7_Db.Data;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
 
 namespace Ch7_Db;
 

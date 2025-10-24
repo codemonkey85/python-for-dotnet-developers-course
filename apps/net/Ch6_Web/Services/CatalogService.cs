@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Ch6_Web.Data;
+﻿using Ch6_Web.Data;
 
 namespace Ch6_Web.Services;
 

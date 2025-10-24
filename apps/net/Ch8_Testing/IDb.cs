@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ch8_Testing;
+﻿namespace Ch8_Testing;
 
 public interface IDb
 {

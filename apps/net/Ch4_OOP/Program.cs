@@ -1,5 +1,4 @@
-﻿using System;
-using Ch4_OOP.Models;
+﻿using Ch4_OOP.Models;
 
 namespace Ch4_OOP;
 

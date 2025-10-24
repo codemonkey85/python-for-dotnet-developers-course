@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ch4_OOP.Models;
+﻿namespace Ch4_OOP.Models;
 
 public abstract class Car(string modelName, string engineType, int cylinders, float basePrice)
 {

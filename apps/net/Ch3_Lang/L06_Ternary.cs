@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ch3_Lang;
+﻿namespace Ch3_Lang;
 
 internal class Ternary
 {

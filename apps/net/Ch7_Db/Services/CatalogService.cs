@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Ch7_Db.Data;
+﻿using Ch7_Db.Data;
 
 namespace Ch7_Db.Services;
 

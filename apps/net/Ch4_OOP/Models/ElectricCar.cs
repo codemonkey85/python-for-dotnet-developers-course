@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ch4_OOP.Models;
+﻿namespace Ch4_OOP.Models;
 
 public class ElectricCar(string modeName, float basePrice) : Car(modeName, "electric", 0, basePrice)
 {

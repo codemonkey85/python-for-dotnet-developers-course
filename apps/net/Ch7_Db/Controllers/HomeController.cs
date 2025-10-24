@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics;
 using Ch7_Db.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace Ch7_Db.Controllers;
 

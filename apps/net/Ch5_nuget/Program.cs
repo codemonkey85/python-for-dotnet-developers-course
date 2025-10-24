@@ -1,7 +1,5 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Net;
-using System.Net.Http;
 using HtmlAgilityPack;
 
 namespace Ch5_nuget;
